@@ -1,0 +1,14 @@
+<h2><%= @gossip.content%></h2>
+<table class="table table-striped">
+  <tr>
+    <th>Date</th>
+    <th>Créateur</th>
+    <th> </th>
+  </tr>
+    <tr>
+      <td><%= @gossip.date.strftime("%d-%m-%Y") %></td>
+      <td><%= @gossip.content %></td>
+      <td><%= @event.moussaillon.username %></td>
+      <td></td>
+    </tr>
+</table>
