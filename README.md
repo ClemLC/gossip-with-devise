@@ -6,3 +6,5 @@ Ce que tu peux faire :
 * Créer des gossips et les supprimer. Ne t'inquiète pas, tu es le seul à pouvoir supprimer tes gossips. En revanche, tu ne pourras pas supprimer les gossips des autres !!
 
 * bon les tests c'est pas une réussite...
+
+* Venez faire un tour https://gossip-with-devise.herokuapp.com/ 
