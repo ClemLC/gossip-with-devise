@@ -19,6 +19,12 @@ class GossipsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    @gossip = Gossip.find(params[:id])
+    @gossip.destroy
+    redirect_to root_path
+  end
+
   private
   def gossip_params
     params.require(:gossip).permit(:content)

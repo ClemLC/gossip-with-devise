@@ -1,8 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
 
-<h1>StaticPages#index</h1>
-
 <ul>
   <% if moussaillon_signed_in? %>
   <h3 class="text-center"><%= "Bienvenue #{current_moussaillon.username} ..."%></h3>
@@ -10,12 +8,22 @@
     <thead>
       <tr>
         <th>Les rumeurs qui circulent</th>
+        <th>Auteur Anonyme</th>
+        <th>Depuis</th>
+        <th></th>
       </tr>
     </thead>
     <tbody>
       <% @gossips.each do |gossip| %>
         <tr>
           <td><%= gossip.content %></td>
+          <td><%= gossip.moussaillon.username %></td>
+          <td><%= gossip.created_at.strftime("%d-%m-%Y") %></td>
+          <td>
+            <% if current_moussaillon.email == gossip.moussaillon.email %> <!-- Ici on check si le gossip appartient au moussaillon loggé -->
+            <%=link_to'Stopper la rumeur !', gossip_path(gossip), method: :delete %>
+            <% end %>
+          </td>
         </tr>
         <% end %>
     </tbody>
