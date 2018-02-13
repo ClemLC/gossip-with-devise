@@ -15,11 +15,14 @@
 #  last_sign_in_ip        :string
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
+#  username               :string
 #
 
 class Moussaillon < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  has_many :gossips
+
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 end
