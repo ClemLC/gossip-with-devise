@@ -21,6 +21,12 @@
 class Moussaillon < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
+  attr_accessor :sign_up_code
+    validates :sign_up_code,
+      on: :create,
+      presence: true,
+      inclusion: { in: ["da_code"] }
+
   has_many :gossips
 
   devise :database_authenticatable, :registerable,
